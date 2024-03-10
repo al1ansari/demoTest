@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>chai aur Code| DOM</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>python</li>
+    </ul>
+    
+</body>
+<script>
+    function language(langName){
+
+        const li = document.createElement("li")
+        li.innerText = `${langName}`
+        document.querySelector(".language").appendChild(li)
+    }
+    language("C++");
+
+    function optimizedLanguage(langName){
+        const li = document.createElement("li")
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(li)
+    }
+
+    optimizedLanguage("MOJO");
+
+    const secondland = document.querySelector("li:nth-child(2)")
+    console.log(secondland);
+    const newli = document.createElement('li')
+    newli.textContent = "Java"
+    secondland.replaceWith(newli)
+
+    const firstlang = document.querySelector("li:first-child")
+    // firstlang.outerHTML = "<li>Typescript</li>"
+
+    firstlang.remove()
+
+</script>
+</html>
